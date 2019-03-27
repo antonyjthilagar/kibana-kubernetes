@@ -2,7 +2,6 @@
 Kibana setup for kubernetes and openshift.
 
 --> Kibana will access the Elasticsearch cluster via a local haproxy instance.
---> No Elasticsearch coordination node will be used, since X-Pack (including an additional license) would be required.
 
 # Preparation
 Elasticsearch:
