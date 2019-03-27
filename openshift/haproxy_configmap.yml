@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  haproxy.cfg: "defaults\n  option dontlog-normal\n  option tcplog\n  mode tcp\n  timeout
+    client 600s\n  timeout connect 600s\n  timeout server 600s\n  balance roundrobin\nfrontend
+    fe_es\n  bind *:9200\n  default_backend be_es\nbackend be_es\n  server es-prod-01
+    10.13.10.159:9200 check\n  server es-prod-02 10.13.10.160:9200 check\n  server
+    es-prod-03 10.13.10.161:9200 check\n  server es-prod-04 10.13.10.162:9200
+    check\n  server es-prod-05 10.13.10.163:9200 check\n  "
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: haproxy

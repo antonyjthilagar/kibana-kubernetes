@@ -1,0 +1,38 @@
+apiVersion: v1
+data:
+  elasticsearch_ca.crt: |-
+    -----BEGIN CERTIFICATE-----
+    BQAwNDEyMDAGA1UEAxMpRWxhc3RpYyBDZXJ0aWZpY2F0ZSBUb29sIEF1dG9nZW5l
+    cmF0ZWQgQ0EwHhcNMTcwNTMxMTQxNDUyWhcNMjAwNTMwMTQxNDUyWjA0MTIwMAYD
+    VQQDEylFbGFzdGljIENlcnRpZmljYXRlIFRvb2wgQXV0b2dlbmVyYXRlZCBDQTCC
+    ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAJYjlfbWlPO3aikMYu9gyaP1
+    FBWGnxsjtP4QW9BgXVlojIYO8zJVznHcdRKVl75mZfCzqkViHNtEFk6C3D7uU3+Z
+    TpiL7pgH1sXkUCTwtgOX1XuglixFWZ5lp2dyC8rVCMsqLm+nP/oXpElnuJ9GQqZx
+    X62raU2VLwR6PgBd1Ow20YqzJhtDAyNkd3lWYkMe8M/PapgGmeJq5QeyfL+u5zWr
+    quZ3qKe2WDCYme1Y/xLAdb3saOFo5gqFazwOZ5Z0RTzblkG5BW32szycHdHTcyc1
+    Bt4pPIqIatqUjfheXAuQMw/F3EHNWd/hhYWW/FDM+mn/9jekVLAIoq98EiZFm/8C
+    AwEAAaOBpDCBoTAdBgNVHQ4EFgQUfTMm3pEiazKHDOi3u/jSfRew8lEwbwYDVR0j
+    BGgwZoAUfTMm3pEiazKHDOi3u/jSfRew8lGhOKQ2MDQxMjAwBgNVBAMTKUVsYXN0
+    aWMgQ2VydGlmaWNhdGUgVG9vbCBBdXRvZ2VuZXJhdGVkIENBghRf4uv4r4vMTAXz
+    NgmIx1cVcI/odzAPBgNVHRMBAf8EBTADAQH/MA0GCSqGSIb3DQEBCwUAA4IBAQBd
+    Dygx6NJG2OvNH5eM70nkhZs3wtVSWIzWBQKckZy6Na5aFaPfRuxi4YiNxwwnyLBe
+    KYjXZ3ercaL3hFfOq+n5vxBTXvmLUr/TXyqsTj0HmnM8AQr5d1ssvifibjt6r+9M
+    +62+dnFXXuNvWzXVN
+    -----END CERTIFICATE-----
+  kibana.yml: "server.name: \"kibana-antony.com\" \nserver.host:
+    \"0.0.0.0\"\nkibana.index: \".kibana-finance\"\nelasticsearch.username: \"kibana-finance\"\nelasticsearch.url:
+    \"https://127.0.0.1:9200\"\nelasticsearch.ssl.verificationMode: \"certificate\"\nelasticsearch.ssl.certificate:
+    \"/usr/share/kibana/ssl/elasticsearch_ca.crt\"\nelasticsearch.ssl.certificateAuthorities:
+    [ \"/usr/share/kibana/ssl/elasticsearch_ca.crt\" ]\nelasticsearch.pingTimeout:
+    15000\nelasticsearch.startupTimeout: 60000\nelasticsearch.requestTimeout: 600000\nlogging.quiet:
+    \"true\"\nstatus.allowAnonymous: \"false\"\nxpack.security.enabled: \"true\"\nxpack.monitoring.enabled:
+    \"true\"\nxpack.monitoring.ui.enabled: \"true\"\nxpack.ml.enabled: \"true\"\nxpack.monitoring.elasticsearch.url:
+    \"https://127.0.0.1:9200\"\nxpack.reporting.queue.timeout: 600000\nxpack.monitoring.elasticsearch.username:
+    \"kibana-finance\"\nxpack.monitoring.ui.container.elasticsearch.enabled: \"true\"\nxpack.monitoring.elasticsearch.ssl.certificateAuthorities:
+    \"/usr/share/kibana/ssl/elasticsearch_ca.crt\"\nxpack.security.encryptionKey:
+    \"mi2LDGXo4IvKWegAoGb7DTofxwXrYItSTbMrgj7RFwfKKLALal72mo9BRR6KxTs0\"\nxpack.reporting.index:
+    \".reporting-finance\""
+kind: ConfigMap
+metadata:
+  creationTimestamp: null
+  name: kibana

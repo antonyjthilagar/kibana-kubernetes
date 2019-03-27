@@ -1,0 +1,15 @@
+apiVersion: autoscaling/v1
+kind: HorizontalPodAutoscaler
+metadata:
+  name: kibana
+spec:
+  scaleTargetRef:
+    kind: DeploymentConfig
+    name: kibana
+    apiVersion: apps.openshift.io/v1
+    subresource: scale
+  minReplicas: 2
+  maxReplicas: 3
+  cpuUtilization:
+    targetCPUUtilizationPercentage: 80
+
